@@ -1,0 +1,193 @@
+GET http://localhost:4004/api/User
+###
+POST http://localhost:4004/api/Stock
+Content-Type: application/json
+
+{"name": "chicken", "category": "MeatAndPoultry"}
+
+###
+PUT http://localhost:4004/api/Stock('58f426c5-437e-4f02-8de2-b1ec7dac35eb')
+Content-Type: application/json
+
+{"name": "fish", "category":"Seafood"}
+
+###
+POST http://localhost:4004/api/BeneficiaryStock
+Content-Type: application/json
+
+{"beneficiary":"bene001", "stock":"58f426c5-437e-4f02-8de2-b1ec7dac35eb", "stockCount": 1}
+
+###
+GET http://localhost:4004/api/Schedule
+
+###
+GET http://localhost:4004/api/Charity
+
+###
+POST http://localhost:4004/api/Schedule
+Content-Type: application/json
+
+{"date": "2020-10-10", "startTime": "9:30 AM", "charity_charityID": "6f2d8e67-d90c-4cfb-b47a-d4a25c792e36"} 
+
+###
+GET http://localhost:4004/api/Beneficiary
+
+###
+GET http://localhost:4004/api/Region
+
+###
+POST http://localhost:4004/api/Beneficiary
+Content-Type: application/json;IEEE754Compatible=true
+
+{"address": "tester",
+"householdSize": 1,
+"perCapitalIncome": "400.333",
+"religion": "Buddhism",
+"race": "Chinese",
+"numWorkingAdults": 1,
+"noOfChildren": 0,
+"dietaryRestrictions": "Diabetes",
+"regionID_regionID": null,
+"Stocks": 
+[
+    {
+        "stock":	"087c196b-c244-4d30-bf71-d88c1233de41"
+    }
+    
+]
+}
+
+###
+GET  http://localhost:4004/api/Beneficiary('4eb5805c-c5a1-4d9b-9c73-4a87ffc8db92')?$expand=Stocks
+
+###
+POST http://localhost:4004/api/Stock
+Content-Type: application/json
+
+ {
+    "stockID": "rice002",
+    "name": "SONGHE Thai Fragrant Rice 25KG",
+    "category": "grain"
+}
+
+###
+POST http://localhost:4004/api/Beneficiary
+Content-Type: application/json;IEEE754Compatible=true
+
+{
+    "beneficiaryID": "bene001",
+    "address": "tester",
+    "householdSize": 1,
+    "perCapitalIncome": "400.333",
+    "religion": "Buddhism",
+    "race": "Chinese",
+    "numWorkingAdults": 1,
+    "noOfChildren": 0,
+    "dietaryRestrictions": "Diabetes",
+    "regionID_regionID": null
+}
+
+###
+
+POST http://localhost:4004/api/BeneficiaryStock
+Content-Type: application/json
+
+ {
+    "beneficiary": {
+        "beneficiaryID": "bene001"
+    },
+    "stock": {
+        "stockID": "rice002"
+    },
+    "stockCount": 5
+}
+
+###
+POST  http://localhost:4004/api/FoodBasket
+Content-Type: application/json
+
+{  
+    "basket": {
+        "BasketID": "02"
+    },
+    "stock": {
+         "stockID" : "rice002"
+    },
+    "quantity":4
+}
+
+###
+// sample POST request deep insert
+POST http://localhost:4004/api/Basket
+Content-Type: application/json
+
+{  
+    "BasketID" : "006",
+    "name" : "tester1",
+    "stocks": [{
+        "quantity": 4,
+        "basket_BasketID":"02",
+        "stock_stockID":"rice001"
+    }]
+}
+
+###
+// sample PUT request deep insert
+PUT http://localhost:4004/api/Basket/006
+Content-Type: application/json
+
+{  
+    "BasketID" : "006",
+    "name" : "tester1",
+    "stocks": [{
+        "quantity": 4,
+        "basket_BasketID":"02",
+        "stock_stockID":"rice001"
+    }, 
+    {   "quantity": 4,
+        "basket_BasketID":"02",
+        "stock_stockID":"rice002"}
+    ]
+}
+
+### 
+// sample GET DEEP TASK
+GET http://localhost:4004/api/Task?$expand=Food($expand=stocks)
+
+###
+// sample POST create schedule
+POST http://localhost:4004/api/Schedule
+Content-Type: application/json
+
+{ 
+    "date" : "2020-11-08",
+    "startTime": "9:00 AM",
+    "charity_charityID" : "charity001",
+    "Details": [
+        {
+            "deliverStatus": "NotCompleted",
+            "parent_scheduleID": "newtest",
+            "volunteer_userID" : "user001",
+            "beneficiary_beneficiaryID" : "bene001",
+            "Food_BasketID": "01"
+        }
+    ]
+}
+###
+//
+PUT  http://localhost:4004/api/Task?$top=1&$filter=parent_scheduleID eq 'schedule001' and volunteer_userID eq 'user001' and beneficiary_beneficiaryID eq 'bene001'
+Content-Type: application/json
+
+{
+            "deliverStatus": "Completed",
+            "parent_scheduleID": "schedule001",
+            "volunteer_userID" : "user001",
+            "beneficiary_beneficiaryID" : "bene001",
+            "Food_BasketID": "01"
+}
+###
+GET http://localhost:4004/api/Task?$filter=parent_scheduleID eq 'schedule001' and volunteer_userID eq 'user001'
+
+
+###
+GET http://localhost:4004/api/Task('d94a6e51-9d2f-4ac6-8239-6bfb92b0d226')

@@ -1,0 +1,10 @@
+name;beneficiaryID;address;postcode;householdSize;perCapitalIncome;religion;race;numWorkingAdults;noOfChildren;dietaryRestrictions;regionID_regionID;org_charityID;extraCharities
+Mr. Lee;bene001;Jalan Kukoh Blk 9 #09-11; 161009; 1; 1000; Buddhism; Chinese; 1; 0; Diabetes;region09;charity001;charity002,charity003
+Tan Family;bene002;Jalan Kukoh Blk 3 #04-11;161003; 4; 600; Islam; Malay; 2; 2; Halal;region09;charity001;charity002,charity003
+Ms. Lim;bene003;Circuit Road Blk 62 #02-04; 370062;1; 800; Hinduism; Indian; 1; 0; No Beef;region03;charity002;charity002,charity003
+Mrs. Goh;bene004;Ang Mo Kio Ave 11 Blk 256 #02-11; 560256;1;400; Buddhism; Chinese; 1; 0; Diabetes;region01;charity002;charity001,charity003
+Mr. Venkat;bene005;Ang Mo Kio Ave 11 Blk 254 #04-11; 560256;6;200;Catholicism; Chinese; 2; 4; High blood pressure;region01;charity003;
+Mr. Chong;bene006;Teban Gardens Blk 40 #07-07; 600040; 6; 400; Islam; Malay; 2; 4; High Cholesterol;region04;charity005;
+Mr. Peh;bene007;Teban Gardens Blk 43 #08-08; 600043; 5; 900; Hinduism; Indian; 2; 3; Low blood pressure;region04;charity001;
+Mrs. Tan;bene008;Jalan Kukoh Blk 9 #05-121; 161009;6; 200; Taoism; Chinese; 2; 4; High blood pressure;region09;charity004;
+Dr. Ho;bene009;Ang Mo Kio Ave 6 Blk 123 #03-03; 560123; 3; 300; Islam; Malay; 1; 2; Low blood pressure;region01;charity002;

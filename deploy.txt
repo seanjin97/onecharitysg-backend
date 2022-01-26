@@ -1,0 +1,68 @@
+export NODE_ENV=production
+cds build/all --clean
+cf create-service hanatrial hdi-shared ebs-dev-db
+cf push -f gen/db -k 256M
+cf push -f gen/srv --random-route -k 320M
+
+DEV-DB
+
+TO prevent database from crashing
+need to add hdiconfig to gen/db/src
+
+---
+applications:
+- name: ebs-dev-db
+  path: .
+  no-route: true
+  health-check-type: process
+  memory: 128M
+  services:
+  - DEV-DB
+
+
+---
+applications:
+- name: ebs-dev-srv
+  path: .
+  memory: 128M
+  services:
+  - DEV-DB
+
+
+{
+  "name": "deploy",
+  "dependencies": {
+    "@sap/hdi-deploy": "^3"
+  },
+  "scripts": {
+    "start": "node node_modules/@sap/hdi-deploy/deploy.js"
+  }
+}
+
+
+{
+  "name": "EBS-G1T3-Odata",
+  "version": "1.0.0",
+  "description": "G1T3 Odata.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+      "@sap/cds": "^3",
+      "express": "^4",
+      "@sap/hana-client": "^2.4.177"
+  },
+  "scripts": {
+      "start": "npx cds run"
+  },
+  "cds": {
+      "requires": {
+          "db": {
+              "kind": "sql"
+          }
+      }
+  },
+  "devDependencies": {
+      "sqlite3": "^5.0.0",
+  }
+}

@@ -1,0 +1,6 @@
+scheduleID;date;startTime;charity_charityID
+schedule001;2020-10-02;9:00 AM;charity001
+schedule001002;2020-10-01;10:00 AM;charity001
+schedule001003;2020-11-01;11:00 AM;charity001
+schedule001004;2020-12-13;9:30 AM;charity001
+schedule001005;2020-10-27;8:30 AM;charity001

@@ -1,0 +1,22 @@
+charities_charityID;stock_stockID;stock_name;stockCount
+charity001;rice001;SONGHE Thai Fragrant Rice 25KG;35
+charity001;rice002;SONGHE Thai Fragrant Rice 10KG;23
+charity001;rice003;SONGHE Jasmine Brown Rice 5KG;32
+charity001;rice004;Basmati Rice 5KG;64
+charity001;dairy001;Egg 30s;53
+charity001;dairy002;Egg 10s;23
+charity001;bread001;Loaf of bread 600g;43
+charity001;canned001;Peanut butter 500g;34
+charity001;canned002;Nutella 680g;45
+charity001;instant001;Instant noodles 5s;21
+charity001;dairy003;Fresh milk 1l;12
+charity001;drygoods001;Crackers 1tin;32
+charity001;beverage001;Milo 1.8kg tin;21
+charity001;rice;generic rice;32
+charity001;beverage;generic beverage;43
+charity001;instant;generic instant;43
+charity001;bread;generic bread;32
+charity001;egg;generic egg;13
+charity001;vege;generic vege/fruit;23
+charity001;canned;generic canned;235
+charity001;biscuit;generic biscuit;34

@@ -1,0 +1,22 @@
+stockID;name;category
+rice001;SONGHE Thai Fragrant Rice 25KG;Grain
+rice002;SONGHE Thai Fragrant Rice 10KG;Grain
+rice003;SONGHE Jasmine Brown Rice 5KG;Grain
+rice004;Basmati Rice 5KG;Grain
+dairy001;Egg 30s;Dairy
+dairy002;Egg 10s;Dairy
+bread001;Loaf of bread 600g;BreadOrBakery
+canned001;Peanut butter 500g;Canned
+canned002;Nutella 680g;Canned
+instant001;Instant noodles 5s;Instant
+dairy003;Fresh milk 1l;Dairy
+drygoods001;Crackers 1tin;DryGoods
+beverage001;Milo 1.8kg tin;Beverage
+rice;generic rice;Grain
+beverage;generic beverage;Beverage
+instant;generic instant;Instant
+bread;generic bread;Bread
+egg;generic egg;Egg
+vege;generic vege/fruit;Vege/fruit
+canned;generic canned;Canned
+biscuit;generic biscuit;Biscuit
